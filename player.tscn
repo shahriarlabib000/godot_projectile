@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnkxk3dtcr0la"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_75o6r"]
+[ext_resource type="Script" path="res://Marker2D.gd" id="2_eqhkb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_inmot"]
+radius = 30.0
+height = 100.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n5q5j"]
+radius = 30.0
+height = 100.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_75o6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_inmot")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("CapsuleMesh_n5q5j")
+
+[node name="arm" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="arm"]
+position = Vector2(100, 0)
+script = ExtResource("2_eqhkb")
+
+[node name="Line2D" type="Line2D" parent="arm"]
+points = PackedVector2Array(0, 0, 1000, 0)
+default_color = Color(1, 0, 0, 1)

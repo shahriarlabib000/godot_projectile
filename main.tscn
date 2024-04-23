@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqa7pr338tk3s"]
+
+[ext_resource type="PackedScene" uid="uid://bnkxk3dtcr0la" path="res://player.tscn" id="2_sbuku"]
+[ext_resource type="PackedScene" uid="uid://b07ip7fkyv52v" path="res://ui.tscn" id="3_cxany"]
+[ext_resource type="PackedScene" uid="uid://c5fwpd1fmba6p" path="res://enemy.tscn" id="3_g84tb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opfie"]
+size = Vector2(10000, 50)
+
+[sub_resource type="QuadMesh" id="QuadMesh_u6u35"]
+size = Vector2(10000, 50)
+
+[node name="main" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+shape = SubResource("RectangleShape2D_opfie")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="floor"]
+show_behind_parent = true
+mesh = SubResource("QuadMesh_u6u35")
+
+[node name="player" parent="." instance=ExtResource("2_sbuku")]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="ui" parent="player/Camera2D" instance=ExtResource("3_cxany")]
+
+[node name="enemy" parent="." instance=ExtResource("3_g84tb")]
+position = Vector2(500, 400)

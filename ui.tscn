@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://b07ip7fkyv52v"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i0yi7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2osbx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qp3ab"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bpr2c"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h4hny"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8o3df"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_05lhy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o7jb3"]
+
+[node name="ui" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -20.0
+offset_bottom = 318.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="shoot" type="TouchScreenButton" parent="Control"]
+position = Vector2(96, 74)
+scale = Vector2(100, 100)
+texture_normal = SubResource("PlaceholderTexture2D_i0yi7")
+texture_pressed = SubResource("PlaceholderTexture2D_2osbx")
+action = "ui_cut"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -305.0
+offset_right = 353.0
+grow_vertical = 0
+
+[node name="left" type="TouchScreenButton" parent="Control2"]
+position = Vector2(25, 151)
+scale = Vector2(100, 100)
+texture_normal = SubResource("PlaceholderTexture2D_qp3ab")
+texture_pressed = SubResource("PlaceholderTexture2D_bpr2c")
+action = "ui_left"
+
+[node name="right" type="TouchScreenButton" parent="Control2"]
+position = Vector2(206, 144)
+scale = Vector2(100, 100)
+texture_normal = SubResource("PlaceholderTexture2D_h4hny")
+texture_pressed = SubResource("PlaceholderTexture2D_8o3df")
+action = "ui_right"
+
+[node name="jump" type="TouchScreenButton" parent="Control2"]
+position = Vector2(110, 6)
+scale = Vector2(100, 100)
+texture_normal = SubResource("PlaceholderTexture2D_05lhy")
+texture_pressed = SubResource("PlaceholderTexture2D_o7jb3")
+action = "ui_accept"

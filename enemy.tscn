@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5fwpd1fmba6p"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_6xwud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hayo"]
+size = Vector2(100, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bfw4p"]
+size = Vector3(100, 100, 1)
+
+[node name="enemy" type="StaticBody2D" groups=["enemy"]]
+script = ExtResource("1_6xwud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4hayo")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("BoxMesh_bfw4p")
+
+[node name="hit" type="Label" parent="."]
+visible = false
+offset_left = -49.0
+offset_top = -103.0
+offset_right = 34.0
+offset_bottom = -68.0
+theme_override_font_sizes/font_size = 20
+text = "hit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
